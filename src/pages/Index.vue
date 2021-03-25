@@ -29,7 +29,7 @@
            <div class="flex justify-center subtasks"
            :style="{ backgroundColor: subtask.done == true ? '#52b202' : '#f6685e'}"
            v-for="(subtask,index) in JSON.parse(todo).subTasks" :key="subtask">
-             <span class="flex flex-row justify-center">
+             <span class="flex flex-row justify-center subtask_text">
                {{ subtask.name }}
              </span>
              <span class="subtask" v-if="subtask.done == false">
@@ -153,10 +153,14 @@ body {
     margin-left: 10px;
     margin-right: 10px;
   }
-  .subtask {
-    padding-left: 50px;
+  .subtask_text {
+    word-wrap:break-word;
+    display: inline-block;
+    width: 300px;
+    height: auto;
   }
   .subtasks {
+    text-align: center;
     word-wrap:break-word;
     width: 80%;
     margin-left: auto;
@@ -194,6 +198,7 @@ body {
   }
 
   #success_circle {
+    margin-left: 10px;
     padding-top: 2px;
     padding-left: 16px;
     font-size: 10px;
